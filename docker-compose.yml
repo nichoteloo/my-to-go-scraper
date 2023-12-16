@@ -1,0 +1,17 @@
+version: '3'
+services:
+  postgres:
+    image: postgres:latest
+    container_name: postgres-scraper
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: scraper
+    ports:
+      - "5433:5432"
+
+  redis:
+    image: redis:latest
+    container_name: redis-scraper
+    ports:
+      - "6379:6379"
